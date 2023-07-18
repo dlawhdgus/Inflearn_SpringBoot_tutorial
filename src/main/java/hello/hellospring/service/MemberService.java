@@ -14,7 +14,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     @Autowired
-    public MemberService(MemberRepository memberRepository) {  //dependency injection
+    public MemberService(MemberRepository memberRepository) {  //dependency injection(생성자 주입)
         this.memberRepository = memberRepository;
     }
 
