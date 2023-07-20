@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//통합 테스트
 @SpringBootTest
 @Transactional  //디비에 반영되지 않음 -> test 코드를 계속 실행 할 수 있다.
 class MemberServiceIntegrationTest {

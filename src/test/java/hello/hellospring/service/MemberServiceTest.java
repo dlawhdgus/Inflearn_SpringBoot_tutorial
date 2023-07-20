@@ -11,6 +11,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//단위 테스트
 class MemberServiceTest {
 
     MemberService memberService;
