@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.HashMap;
@@ -13,11 +14,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+@Repository
 public class JdbcTemplateMemberRepository implements MemberRepository{
 
     private final JdbcTemplate jdbcTemplate;
 
-//    @Autowired <- 생성자가 하나이면 생략 가능
+    @Autowired //<- 생성자가 하나이면 생략 가능
     public JdbcTemplateMemberRepository(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
