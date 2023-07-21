@@ -8,6 +8,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +22,7 @@ class MemberServiceIntegrationTest {
 
     @Autowired MemberService memberService;
 
+    @Qualifier("springDataJpaMemberRepository")
     @Autowired MemberRepository memberRepository;
 
     @Test
