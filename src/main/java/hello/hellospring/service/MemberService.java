@@ -4,6 +4,7 @@ import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +17,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     @Autowired
-    public MemberService(MemberRepository memberRepository) {  //dependency injection(생성자 주입)
+    public MemberService(@Qualifier("springDataJpaMemberRepository") MemberRepository memberRepository) {  //dependency injection(생성자 주입)
         this.memberRepository = memberRepository;
     }
 
@@ -24,7 +25,6 @@ public class MemberService {
     public long join(Member member) {
         //같은 이름이 있는 중복 회원 x
         validateDuplicateMember(member);
-
         memberRepository.save(member);
         return member.getId();
     }
